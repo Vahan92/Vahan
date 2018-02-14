@@ -1,7 +1,7 @@
 let myApp = function() {
-    let max = 100;
-    let min = 4;
-    let print = document.getElementById("print");
+    let max = 100,
+        min = 4,
+        print = document.getElementById("print")
     return {
 
         getId: function(params) {
@@ -62,12 +62,9 @@ let myApp = function() {
 
         reset: function() {
             print.textContent = "";
-            myApp.getId('resets').disabled = true;
-            myApp.getId('colourises').disabled = true;
-            myApp.getId('draws').disabled = false;
             while (forCells.firstChild) {
                 forCells.removeChild(forCells.firstChild);
-            }            
+            }
         }
     }
 }();
