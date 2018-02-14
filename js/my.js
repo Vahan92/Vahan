@@ -61,13 +61,13 @@ let myApp = function() {
         },
 
         reset: function() {
-            while (forCells.firstChild) {
-                forCells.removeChild(forCells.firstChild);
-            }
             print.textContent = "";
             myApp.getId('resets').disabled = true;
             myApp.getId('colourises').disabled = true;
             myApp.getId('draws').disabled = false;
+            while (forCells.firstChild) {
+                forCells.removeChild(forCells.firstChild);
+            }            
         }
     }
 }();
