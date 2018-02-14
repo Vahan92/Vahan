@@ -1,6 +1,7 @@
 let myApp = function() {
     let max = 100;
     let min = 4;
+    let print = document.getElementById("print");
     return {
 
         getId: function(params) {
@@ -8,7 +9,6 @@ let myApp = function() {
         },
 
         printing: function(inpVal) {
-            let print = myApp.getId("print");
             if (typeof print !== null) {
                 print.textContent = "Number of cells: " + inpVal.value;
             }
@@ -64,6 +64,7 @@ let myApp = function() {
             while (forCells.firstChild) {
                 forCells.removeChild(forCells.firstChild);
             }
+            print.textContent = "";
         }
     }
 }();
