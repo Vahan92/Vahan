@@ -14,26 +14,41 @@
 }
 
 #forCells>div{
-    width: 8%;
-    height: 10%;
-    border: 1px solid black;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: inline-flex;
-    flex: 1 auto 1 ;
-    text-rendering: none;
+    -webkit-flex-flow: column;
+    justify-content: space-around;
+   
+}
+
+#forCells>div>div{
+    border: 1px solid black;
+    margin: 1px;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    flex: 1 0 auto;
+    height:auto;
 }
 
 #forCells{
     margin-top: 20px;
     width: 100%;
-    height: 600px;
+    /* height: 600px; */
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    border: none;
-    justify-content: flex-start;
+    /* flex-direction: row; */
+    /* flex-wrap: nowrap;
+    border: none; */
+    justify-content: center;
     align-items: center;
-    flex-flow: column wrap;
-    align-content: center;
+    flex-flow: row wrap;
+    /* align-content: center; */
 }
 
 span{

@@ -20,17 +20,24 @@ let myApp = function() {
             if (inputVal < min || inputVal > max) {
                 alert(`Please enter a number between ${min} and ${max}, or you are going to get this annoying alert notification :)`);
             } else {
-                var i = 0;
+                var i,
+                    j,
+                    newDiv,
+                    newSpan;
                 let fragment = document.createDocumentFragment();
-
-                while (i < inputVal) {
-                    let newSpan = document.createElement('span');
-                    newSpan.innerText = i;
-                    let newDiv = document.createElement('div');
-                    newDiv.appendChild(newSpan);
-                    fragment.appendChild(newDiv);
-                    i++;
+                for (i = 0; i < inputVal; i++) {
+                    let newCol = document.createElement('div');
+                    newCol.classList.add("column");
+                    for (j = 0; j < inputVal; j++) {
+                        newSpan = document.createElement('span');
+                        newSpan.innerText = i;
+                        newDiv = document.createElement('div');
+                        newDiv.appendChild(newSpan);    
+                        newCol.appendChild(newDiv);               
+                    }
+                    fragment.appendChild(newCol);
                 }
+               
                 myApp.getId('resets').disabled = false;
                 myApp.getId('colourises').disabled = false;
                 myApp.getId('draws').disabled = true;
@@ -48,16 +55,13 @@ let myApp = function() {
         },
 
         colourise: function() {
-            let toColour = forCells.children;
-            var i;
-            for (i = 0; i < toColour.length; i++) {
-                (function(i) {
+            let toColour =  document.querySelectorAll('.column > div'); 
+            for (let i = 0; i < toColour.length; i++) {
                     setTimeout(function() {
                         toColour[i].style.backgroundColor = myApp.getRandomColor();
                         toColour[i].style.transition = "all 1.5s";
-                    }, 1500 * i);
-                })(i);
-            };
+                    }, 1500 * i);           
+        }
         },
 
         reset: function() {
@@ -65,6 +69,9 @@ let myApp = function() {
             while (forCells.firstChild) {
                 forCells.removeChild(forCells.firstChild);
             }
+            myApp.getId('resets').disabled = true;
+            myApp.getId('colourises').disabled = true;
+            myApp.getId('draws').disabled = false;
         }
     }
 }();

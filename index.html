@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,23 @@
     <link rel="stylesheet" type="text/css" href="css/my.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="container">
         <div class="up">
             <form>
                 <label id="print"></label>
                 <br/>
-                <input type="number" name="quantity" min="4" max="100" id="num"  oninput="myApp.printing(this)"/>
-                <button class="myButtons"  type="button" onclick="myApp.draw()" id="draws">Draw</button>
+                <input type="number" name="quantity" min="4" max="100" id="num" oninput="myApp.printing(this)" />
+                <button class="myButtons" type="button" onclick="myApp.draw()" id="draws">Draw</button>
                 <button class="myButtons" type="button" onclick="myApp.colourise()" id="colourises" disabled>Colourise</button>
-                <button class="myButtons" onclick="myApp.reset()" id="resets" disabled>Reset</button>
-            </form>    
+                <button class="myButtons" type="button" onclick="myApp.reset()" id="resets" disabled>Reset</button>
+            </form>
         </div>
-        <div id="forCells">                         
+        <div id="forCells">
         </div>
     </div>
-    <script src="js/my.js"></script>        
+    <script src="js/my.js"></script>
 </body>
+
 </html>
