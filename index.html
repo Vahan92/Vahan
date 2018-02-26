@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/my.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Document</title>
 </head>
 
@@ -15,16 +15,16 @@
             <form>
                 <label id="print"></label>
                 <br/>
-                <input type="number" name="quantity" min="4" max="100" id="num" oninput="myApp.printing(this)" />
-                <button class="myButtons" type="button" onclick="myApp.draw()" id="draws">Draw</button>
-                <button class="myButtons" type="button" onclick="myApp.colourise()" id="colourises" disabled>Colourise</button>
-                <button class="myButtons" type="button" onclick="myApp.reset()" id="resets" disabled>Reset</button>
+                <input type="number" name="quantity" min="4" max="100" id="num" oninput="simpleApp.printing(this)" />
+                <button class="myButtons" type="button" onclick="simpleApp.draw()" id="draws">Draw</button>
+                <button class="myButtons" type="button" onclick="simpleApp.colourise()" id="colourises" disabled>Colourise</button>
+                <button class="myButtons" type="button" onclick="simpleApp.reset()" id="resets" disabled>Reset</button>
             </form>
         </div>
         <div id="forCells">
         </div>
     </div>
-    <script src="js/my.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
